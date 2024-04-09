@@ -5,4 +5,4 @@ def homepage(request):
     return render(request, 'index.html')
 
 def aboutUS(request):
-    return HttpResponse("This Application is developed by Mr. Mukul Jain")
+    return render(request, 'about.html')
