@@ -17,13 +17,20 @@ def pdf_data(PDF_FILE):
     
     return data
 
-def pdf_pages(PDF_FILE):
+def no_pdf_pages(PDF_FILE):
     '''This function takes file location(PDF) as a string in the input and returns the number of pages in the pdf'''
 
     pdfreader = PdfReader(PDF_FILE)
     
     return len(pdfreader.pages) 
 
+
+def convert_list(data):
+    '''convert each word of the pdf file into lowercase and remove extra spaces from each word'''
+    for i in range(len(data)):
+        data[i] = data[i].lower()
+        data[i] = data[i].replace(" ","")
+    return data
 
 # PDF_FILE = "E:\Projects\Spell Checker\Spell_Checker\static\dataset\words.pdf"
 # data = pdf_data(PDF_FILE)

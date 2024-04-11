@@ -6,15 +6,22 @@ Homepage
 
 
 {% block baseFile %}
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Enter text" aria-label="Recipient's username"
-        aria-describedby="button-addon2">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-</div>
+<form method="post">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter complete location of your pdf file"
+             name="location" value="{{loc}}">
+    </div>
 
-<div class="input-group mb-3">
-    <input type="file" class="form-control" id="inputGroupFile02" accept=".pdf">
-    <label class="input-group-text" for="inputGroupFile02">Upload</label>
-</div>
-
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter text" name="input" value="{{output}}">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+    </div>
+    
+    
+    <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02" accept=".pdf">
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+    </div>
+</form>
 {% endblock baseFile %}

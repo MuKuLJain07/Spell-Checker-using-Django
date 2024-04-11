@@ -38,22 +38,18 @@ class Trie:
         return self.__isPresentHelper(self.root, str)
 
 
+# import pdf_reader
+# PDF_FILE = "E:\Projects\Spell Checker\Spell_Checker\static\dataset\words.pdf"
+# data = pdf_reader.pdf_data(PDF_FILE)
 
 
-import pdf_reader
-PDF_FILE = "E:\Projects\Spell Checker\Spell_Checker\static\dataset\words.pdf"
-data = pdf_reader.pdf_data(PDF_FILE)
+# data = pdf_reader.convert_list(data)
 
-# convert each word of the pdf file into lowercase and remove extra spaces from each word
-for i in range(len(data)):
-    data[i] = data[i].lower()
-    data[i] = data[i].replace(" ","")
+# t = Trie()
+# for i in range(len(data)):
+#     t.insert(data[i])
 
-t = Trie()
-for i in range(len(data)):
-    t.insert(data[i])
-
-ans = t.isPresent("aids")
-print(ans)  
+# ans = t.isPresent("aids")
+# print(ans)  
 
 
