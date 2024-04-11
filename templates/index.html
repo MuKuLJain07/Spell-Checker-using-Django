@@ -14,10 +14,17 @@ Homepage
     </div>
 
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Enter text" name="input" value="{{output}}">
+        <input type="text" class="form-control" placeholder="Enter text" name="input" value="{{inp}}">
         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
     </div>
     
+    {% for entry in output%}
+        {% if entry.bool == 'False' %}
+            <span style="color:red">{{entry.word}}</span>
+        {% else %}
+            <span>{{entry.word}}</span>
+        {% endif %}
+    {% endfor %}
     
     <div class="input-group mb-3">
         <input type="file" class="form-control" id="inputGroupFile02" accept=".pdf">
